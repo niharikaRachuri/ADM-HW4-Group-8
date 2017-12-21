@@ -1,5 +1,8 @@
 import matplotlib.pyplot as plt
 import networkx as nx
+import seaborn as sns
+from collections import Counter
+import pandas as pd
 
 # Define a function wich computes the Closeness Centrality:
 
@@ -10,16 +13,14 @@ def closeness(graph):
 
 def plot_closeness(graph):
     closenessDict = closeness(graph)
-    keyList = []
-    closenessList = []
-    for keys in closenessDict.keys():
-        keyList.append(keys)
-        closenessList.append(closenessDict[keys])
-    y = closenessList
-    print('Closeness Centrlality histogram:')
+    clos = Counter(closenessDict.values())
+    sns.barplot(x = list(clos.keys()), y = list(clos.values()),  palette = 'Greens_d')
+    plt.title('Closeness Centrlality Bar Chart')
     plt.ylabel('Frequency for each CC value')
-    plt.hist(y)
-    plt.show()
+    plt.xlabel('Degree')
+    plt.xticks(rotation='vertical')
+    plt.show()    
+
     
 # Define a function wich computes the Betweeness Centrality:
 
@@ -29,16 +30,13 @@ def betweeness(graph):
 # Define a function wich plots the Betweeness Centrality:
     
 def plot_betweeness(graph):
-    betweennessDict = betweeness(graph)
-    keyList = []
-    betweennessList = []
-    for keys in betweennessDict.keys():
-        keyList.append(int(keys))
-        betweennessList.append(betweennessDict[keys])
-    y = betweennessList
-    print(' Betweeness Centrality histogram:')
+    betweenessDict = betweeness(graph)
+    betw = Counter(betweenessDict.values())
+    sns.barplot(x = list(betw.keys()), y = list(betw.values()),  palette = 'Greens_d')
+    plt.title('Betweeness Centrlality Bar Chart')
     plt.ylabel('Frequency for each BC value')
-    plt.hist(y)
+    plt.xlabel('Degree')
+    plt.xticks(rotation='vertical')
     plt.show()
 
 # Define a function wich computes the Degree Centrality:
@@ -50,34 +48,17 @@ def degree(graph):
     
 def plot_degree(graph):
     degreeDict = degree(graph)
-    keyList = []
-    degreeList = []
-    for keys in degreeDict.keys():
-        keyList.append(int(keys))
-        degreeList.append(degreeDict[keys])
-    y = degreeList
-    print(' Degree Centrality histogram:')
-    plt.ylabel('Frequency for each DC value')
-    plt.hist(y)
+    deg = Counter(degreeDict.values())
+    sns.barplot(x = list(deg.keys()), y = list(deg.values()),  palette = 'Greens_d')
+    plt.title('Degree Centrlality Bar Chart')
+    plt.ylabel('Frequency for each DC values')
+    plt.xlabel('Degree')
+    plt.xticks(rotation='vertical')
     plt.show()
-        
     
+# Define a function wich plots the regression for closenessDict, betweenessDict and degreeDict:    
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+def plot_regression(d1, d2, d3):    
+    dataFrame = pd.DataFrame.from_dict([d1, d2, d3]).transpose()
+    sns.pairplot(dataFrame,  kind = 'reg')
+    plt.show()    

@@ -1,4 +1,5 @@
 import networkx as nx
+import heapq
 
 # Definition of the function for the Jaccard distance to use as weight
 # for the edges for the graph:
@@ -36,10 +37,61 @@ def Dijkstra(graph, source, target):
             
     return dist[target]
 
+# Shortest Path function:
+    
+def shortestPath(graph, source, target):
+    dist = []
+    prev = {}
+    heapq.heappush(dist, (source, 0))
+    
+    for node in graph.nodes():
+        prev[node] = None
+    while len(dist) != 0:
+        p = heapq.heappop(dist)
+        
+        if p[0] == target:
+            return p[1]
+        
+        if prev[p[0]] is None:
+            prev[p[0]] = p[1]
+            
+            for n in graph.neighbors(p[0]):
+                heapq.heappush(dist, (n, graph[p[0]][n]['weight'] + p[1]))
+
+#def shortestPath(graph, source, target):    
+#    dist = []               
+#    prev = {}               
+#    for node in graph.nodes():
+#        prev[node] = None
+    
+#    heapq.heappush(dist, [source, 0])
+
+#    while len(dist) != 0:
+#        p = heapq.heappop(dist)
+#        if p[0] == target:
+#            return p[1]
+    
+#        prev[p[0]] = p[1]
+
+#        for vertex in graph.neighbors(p[0]):
+#            if prev[vertex] is None:
+#                heapq.heappush(dist, [vertex, p[1] + graph[p[0]][vertex]['weight']])
+
+# Definition of the function that computes the Group Number:
+
+#def groupNumber(subset, graph):
+#    for j in subset:
+#        for i in graph.nodes():    
+#            if nx.has_path(graph, i, j):
+#                print("The Group Number for ", i, "with", j, "is: ", Dijkstra(graph, i, j))
+
 # Definition of the function that computes the Group Number:
 
 def groupNumber(subset, graph):
     for j in subset:
         for i in graph.nodes():    
             if nx.has_path(graph, i, j):
-                print("The Group Number for ", i, "with", j, "is: ", Dijkstra(graph, i, j))
+                print("The Group Number for ", i, "with", j, "is: ", shortestPath(graph, i, j))
+
+
+

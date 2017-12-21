@@ -8,7 +8,7 @@ import distances as d
 
 # Import the data set:
 
-data = ps.json.load(open('/Users/gaetanocirianni/reduced_dblp.json'))
+data = ps.json.load(open('/Users/gaetanocirianni/Lab ADM/HW4/full_dblp.json'))
 
 # Find the ID for a specific author:
 
@@ -90,6 +90,7 @@ g.plot_subgraph(lis=author_conf_list, subgraph=confG)
 
 stat.closeness(confG)
 stat.plot_closeness(confG)
+closenessDict = stat.closeness(confG)
 
 # Betweeness centrality:
 # It is a measure of centrality based on the shortest paaths.
@@ -100,18 +101,24 @@ stat.plot_closeness(confG)
 
 stat.betweeness(confG)
 stat.plot_betweeness(confG)
+betweenessDict = stat.betweeness(confG)
 
 # Degree centrality:
 # Degree is a simple centrality measure that counts how many neighbors a node has.
 
 stat.degree(confG)
 stat.plot_degree(confG)
+degreeDict = stat.degree(confG)
+
+# Plot the regression for the three analysis
+
+stat.plot_regression(closenessDict, betweenessDict, degreeDict)
 
 # (b): Given in input an author and an integer d, get the subgraph induced by
 # the nodes that have hop distance at most equal to d with the input author.
 # Then, visualize the graph.
 
-list_neighbors = g.neighbourhood(a= 43, dist= 5, graph= G)
+list_neighbors = g.neighbourhood(a= 43, dist= 2, graph= G)
 G1 = g.subgraph(G, list_neighbors)
 g.plot_subgraph(G1, list_neighbors)
 
@@ -121,7 +128,8 @@ g.plot_subgraph(G1, list_neighbors)
 authorID = int(input("Enter the ID of the author you want to compute the distance from Aris: "))
 d.nx.has_path(G, source = authorID, target = 256176)
 
-d.Dijkstra(G, authorID, 256176)
+#d.Dijkstra(G, authorID, 256176)
+d.shortestPath(G, authorID, 256176)
 
 #(b): Take in input a subset of nodes (cardinality smaller than 21) and returns,
 # for each node of the graph, its GroupNumber, defined as the minimum SP
@@ -131,33 +139,3 @@ d.Dijkstra(G, authorID, 256176)
 subset = list(map(int, input('Insert a subset (of cardinality smaller than 21) of nodes: ').split(" ")))
 
 d.groupNumber(subset, G)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        
-        
-        
-        
-        
