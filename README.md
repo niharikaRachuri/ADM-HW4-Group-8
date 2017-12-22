@@ -2,7 +2,7 @@
 
 
 
-In this homework we want to carry out some information from Computer Scientists network, by applying the graph methodologies. For the information that we want we used the reduced dblp.json: json file, which needs to be parsed and contains a portion of the network. Each entry contains the following information:
+In this homework we want to carry out some information from Computer Scientists network, by applying the graph methodologies. For the information that we want we used the full dblp.json: json file, which needs to be parsed and contains a portion of the network. Each entry contains the following information:
 . author: the name of the authors
 . authors_id: the ID of the authors
 . id_conference: conference in which the authors participated
