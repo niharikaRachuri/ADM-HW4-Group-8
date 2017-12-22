@@ -21,7 +21,7 @@ In the last part we compute the shortest path between the authorsID, that we giv
 PARSING.PY
 
 1. Function: def author_id
-	we create a dictionary for simplify the research of the ID authors, indeed the 		function return us the ID for a specific author
+	we create a dictionary for simplify the research of the ID authors, indeed the function return us the ID for a specific author
 	
 2. Function: def publications_for_author_id
 	we create a dictionary authorsDict where the keys are the ID and the values are 	all the publications. The result of the function are all the publications for a 	given author
@@ -58,19 +58,20 @@ STATISTICS.PY
 	define a function which we use networkx for computes the Closeness centrality 		measures. In a connected graph, closeness centrality (or closeness) of a node is a 	measure of centrality in a network, calculated as the sum of the length of the 		shortest paths between the node and all other nodes in the graph. Thus the more 	central a node is, the closer it is to all other nodes.
 
 2. Function: def plot_closeness
-	in this function we plot the Closeness Centrality
+	in this function we create a dictionary with the Closeness values, after we used Counter, it is an unordered collection where elements are stored as dictionary keys and their counts are stored as dictionary values and plot them
+
 
 3. Function: def betweeness
 	define a function which we use networkx for computes the Betweenness centrality 	measures. betweenness centrality is a measure of centrality in a graph based on 	shortest paths. For every pair of vertices in a connected graph, there exists at 	least one shortest path between the vertices such that either the number of edges 	that the path passes through (for unweighted graphs) or the sum of the weights of 	the edges (for weighted graphs) is minimized. The betweenness centrality for each 	vertex is the number of these shortest paths that pass through the vertex.
 
 4. Function: def plot_betweeness
-	define function with plot the Betweenness Centrality
+	define function where we create a dictionary with the Betweenness values, after we used Counter, it is an unordered collection where elements are stored as dictionary keys and their counts are stored as dictionary values and plot them
 
 5. Function: def degree
 	define a function which we use networkx for computes the Degree centrality 		measures, which is defined as the number of links incident upon a node (i.e., the 	number of ties that a node has). The degree can be interpreted in terms of the 		immediate risk of a node for catching whatever is flowing through the network.
 
 6. Function: def plot_degree
-	plot the Degree Centrality
+	define function where we create a dictionary with the Degree values, after we used Counter, it is an unordered collection where elements are stored as dictionary keys and their counts are stored as dictionary values and plot them
 
 7. Function: def plot_regression
 	define the function with plot the regression for centrality measures that we 		compute before: closeness, betweenness and degree.
@@ -86,7 +87,7 @@ DISTANCES.PY
 	define a function for a Dijkstra's algorithm. This is an algorithm for finding the 	shortest paths between nodes in a graph. In our case we used Dijkstra for finding 	the shortest paths from a single node(source) to a single destination node(target) 	by stopping the algorithm once the shortest path to the destination node has been 	determined.
 
 3. Function: def shortestPath
-	define a function to compute the shortest path using the heapq class
+	define a function to compute the shortest path using the heapq class. We start defining a heap of distances in which record all the nodes and the dictionary where the keys are node and values are its previous. Then, we fill the heap with tuples (node, distance),  initialize the dictionary, every node has unknown previous. Therefore, while the queue of the reached nodes is not empty, extract the minimun value reach the target and return the target name. Finally we update the dictionary and update the dist with the discovered distances.
 
 
 4. Function: def groupNumber
