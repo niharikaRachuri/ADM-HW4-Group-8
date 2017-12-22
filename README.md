@@ -47,7 +47,7 @@ GRAPH.PY
 
 4. Function: def plot_subgraph
 
-5 Function: def neighborhood
+5. Function: def neighborhood
 	define a function which finds, for each node, its neihbors until a defined
 	distance d from the starting node
 
@@ -80,7 +80,7 @@ STATISTICS.PY
 
 DISTANCES.PY
 
-1 Function: def JaccardSim
+1. Function: def JaccardSim
 	define the function for the Jaccard similarity.
 	The Jaccard index, also known as Intersection over Union and the Jaccard 		similarity coefficient (originally coined coefficient de communauté by Paul 		Jaccard), is a statistic used for comparing the similarity and diversity of sample 	sets. The Jaccard coefficient measures similarity between finite sample sets, and 	is defined as the size of the intersection divided by the size of the union of the 	sample sets. The Jaccard distance, is a measure of how dissimilar two sets are, is 	complementary to the Jaccard coefficient and is obtained by subtracting 		the Jaccard coefficient from 1, or, equivalently, by dividing the difference of 	the sizes of the union and the intersection of two sets by the size of the union.
 
