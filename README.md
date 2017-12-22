@@ -3,19 +3,20 @@
 
 
 In this homework we want to carry out some information from Computer Scientists network, by applying the graph methodologies. For the information that we want we used the full dblp.json: json file, which needs to be parsed and contains a portion of the network. Each entry contains the following information:
-. author: the name of the authors
-. authors_id: the ID of the authors
-. id_conference: conference in which the authors participated
-. id_conference_int: the integer number that corresponds to a specific conference
-. id_publication:  publication of the conference
-. id_publication_int: the integer number that corresponds to a specific publication
-. title: title of the conference
+
+> * author: the name of the authors
+> * authors_id: the ID of the authors
+> * id_conference: conference in which the authors participated
+> * id_conference_int: the integer number that corresponds to a specific conference
+> * id_publication:  publication of the conference
+> * id_publication_int: the integer number that corresponds to a specific publication
+> * title: title of the conference
 
 In the first part we create a graph where whose nodes are the authorsID and two node are connected if they share one publication. The weight of each edge is equal to (1 - Jaccard similarity).
 
 In the second part we compute some statistics and create the subgraph induced by the set of authors who published at the input conference at least once. Therefore, we compute three centrality measures: degree, betweenness and closeness. After that, we give in input authorsID and the integer d, create and visualize the second subgraph induced  by the nodes that have hop distance at most equal to d with the input author.
 
-In the last part we compute the shortest path between the authorsID, that we give as input, and Aris. For the shortest path we used Dijkstra algorithm. After that, for the final point, define function that takes in input a subset of nodes (cardinality smaller than 21) and returns, for each node of the graph, its GroupNumber
+In the last part we compute the shortest path between the authorsID, that we give as input, and Aris. For the shortest path we used Dijkstra algorithm. After that, for the final point, define function that takes in input a subset of nodes (cardinality smaller than 21) and returns, for each node of the graph, its GroupNumber.
 
 
 ## Parsing.py
