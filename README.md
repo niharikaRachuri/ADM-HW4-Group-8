@@ -38,8 +38,7 @@ In the last part we compute the shortest path between the authorsID, that we giv
 1. __`def create_graph`__: 
 	define a function for create a graph where the nodes are all the ID authors
 
-2. __`def plot_graph`__:  
-	define a function that given in input a graph and plot it with its info
+2. __`def plot_graph`__:  define a function that given in input a graph and plot it with its info
 
 3. __`def subgraph`__:  define a function that given in input a graph and a list(list of IDs for 		the authors 		that have 		participated to a conference('id_conference_int' in input)) 	with which build a 			subgraph 
 
