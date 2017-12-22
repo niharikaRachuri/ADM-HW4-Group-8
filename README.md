@@ -41,8 +41,7 @@ In the last part we compute the shortest path between the authorsID, that we giv
 2. __`def plot_graph`__:  
 	define a function that given in input a graph and plot it with its info
 
-3. __`def subgraph`__:  
-	define a function that given in input a graph and a list(list of IDs for 		the authors that have 		participated to a conference('id_conference_int' in input)) 	with which build a subgraph 
+3. __`def subgraph`__:  define a function that given in input a graph and a list(list of IDs for 		the authors 		that have 		participated to a conference('id_conference_int' in input)) 	with which build a 			subgraph 
 
 4. __`def plot_subgraph`__
 	
@@ -58,8 +57,7 @@ In the last part we compute the shortest path between the authorsID, that we giv
 1. __`def closeness`__: 
 	define a function which we use networkx for computes the Closeness centrality 		measures. In a connected 	graph, closeness centrality (or closeness) of a node is a 	measure of centrality in a network, calculated as the 	     sum of the length of the 		shortest paths between the node and all other nodes in the graph. Thus the more 	central a node is, the closer it is to all other nodes.
 
-2. __`def plot_closeness`__:  
-	in this function we create a dictionary with the Closeness values, after we used Counter, it is an unordered 		collection where elements are stored as dictionary keys and their counts are stored as dictionary values and plot them
+2. __`def plot_closeness`__:  in this function we create a dictionary with the Closeness values, after we used Counter, it is 		an unordered 		collection where elements are stored as dictionary keys and their counts are stored as 			dictionary values and plot them
 
 
 3. __`def betweeness`__:
