@@ -21,9 +21,8 @@ In the last part we compute the shortest path between the authorsID, that we giv
 PARSING.PY
 
 1. Function: 
-def author_id
-
-we create a dictionary for simplify the research of the ID authors, indeed the function return us the ID for a specific author
+	[def author_id]
+	we create a dictionary for simplify the research of the ID authors, indeed the function return us the ID for a 		specific author
 	
 2. Function: def publications_for_author_id
 	we create a dictionary authorsDict where the keys are the ID and the values are 	all the publications. The result of the function are all the publications for a 	given author
